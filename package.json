@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-microservices",
+  "description": "Proyecto del curso avanzado de backend con NodeJS",
+  "version": "1.0.0",
+  "main": "config.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["node", "express", "nvm"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

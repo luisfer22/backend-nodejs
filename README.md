@@ -23,4 +23,14 @@ Con el comando `node --watch .\api\index.js`
 
 ### Usando Rest Client en vez de insonmia o Postman
 
-Los archivos que terminan en .rest o .http son los que utilizan la extención del VsCode, tambien que para tener varias respuestas en un solo archivo con `### <request description>`.
+Los archivos que terminan en .rest o .http son los que utilizan la extención del VsCode, tambien que para tener varias respuestas en un solo archivo con `### <request description>`, los request estan en la carpeta `./utils/requests/*.rest`.
+
+## Clase 4 - Aislar el codigo de la base de datos
+
+Primero añadimos dos scripts en package.json en `"scripts" : {}`, para correrlos usar `npm start` & `npm run start:dev`.
+
+Ahora se creara la carpeta `./store` aqui estaran las bases de datos, en este caso creamos una base de datos en memoria llamada `dummy.js`
+
+### Usando mockaroo
+
+Pagina de [mockaroo](https://www.mockaroo.com/) para data fake util para pruebas

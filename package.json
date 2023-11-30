@@ -1,16 +1,17 @@
 {
   "name": "nodejs-microservices",
-  "description": "Proyecto del curso avanzado de backend con NodeJS",
+  "description": "Proyecto del curso avanzado de backend con NodeJS con el profesor Carlos Hernandez",
   "version": "1.0.0",
   "main": "config.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start" : "node ./api/index.js",
+    "start:dev": "node --watch ./api/index.js"
   },
   "keywords": ["node", "express", "nvm"],
-  "author": "",
+  "author": "luisfer22",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"
-  }
+  },
+  "devDependencies": {}
 }

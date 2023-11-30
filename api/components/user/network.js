@@ -1,24 +1,34 @@
 const express = require('express');
 
 const response = require('../../../network/response');
-const Controller = require('./controller');
+const Controller = require('./index');
 
 const router = express.Router();
 
 router.get('/', function (req, res) {
-    const lista = Controller.list();
-    response.success(req, res, lista, 200);
+    Controller.list()
+        .then((lista) => {
+            response.success(req, res, lista, 200)
+        })
+        .catch((err) => {
+            response.error(req, res, err.message, 500)
+        })
 })
 
 router.get("/:id", function (req, res) {
     const { id } = req.params
-    const listOne = Controller.listOne(id)
-    response.success(req,res, listOne, 200)
+    Controller.listOne(id)  
+            .then((user) => {
+                response.success(req, res, user, 200)
+            })
+            .catch((err) => {
+                response.error(req, res, err.message, 500)
+            })
 })
 
-router.post()
-router.put()
-router.patch()
-router.delete()
+// router.post()
+// router.put()
+// router.patch()
+// router.delete()
 
 module.exports = router;

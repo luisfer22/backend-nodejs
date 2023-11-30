@@ -26,13 +26,24 @@ dbMock().then(data => {
 }).catch(error => console.log(error))
 
 function list(tabla) {
-  return db[tabla]
+  return new Promise((resolve, reject) => {
+    resolve(db[tabla])
+  })
 }
 
 function get(tabla, id) {
-  let col = list(tabla)
-  console.log(col.filter((item) => item.id === Number(id) ))
-  return col.filter((item) => item.id === Number(id)) || null
+  return new Promise((resolve, reject) => {
+    list(tabla).then((users) => {
+      let user = users.filter((item) => item.id === Number(id)) || null
+      if (user) {
+      resolve(user)
+      }
+      reject("user not found")
+      
+    })
+      
+  
+  })
 }
 
 function upsert(tabla, data) {

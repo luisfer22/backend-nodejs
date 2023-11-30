@@ -34,3 +34,6 @@ Ahora se creara la carpeta `./store` aqui estaran las bases de datos, en este ca
 ### Usando mockaroo
 
 Pagina de [mockaroo](https://www.mockaroo.com/) para data fake util para pruebas
+
+## Clase 5 - Rutas para usuarios
+

@@ -1,0 +1,20 @@
+### url root
+GET http://localhost:3000/ HTTP/1
+
+### get all users
+GET http://localhost:3000/api/user
+
+### get one user
+GET http://localhost:3000/api/user/556
+
+### post user
+POST http://localhost:3000/api/user
+Content-Type: application/json
+
+{
+  "user": "luis",
+  "password": "12345678a"
+}
+
+### update user
+PATCH  http://localhost:3000/api/user

@@ -1,8 +1,0 @@
-### url root
-GET http://localhost:3000/ HTTP/1
-
-### get all users
-GET http://localhost:3000/api/user
-
-### get one user
-GET http://localhost:3000/api/user/556

@@ -1,3 +1,4 @@
+const nanoid = require("nanoid")
 const TABLA = 'user';
 
 module.exports = function (injectedStore) {
@@ -10,13 +11,23 @@ module.exports = function (injectedStore) {
     return store.list(TABLA)
   }
 
-    function listOne(id) {
-        console.log(store.get(TABLA, id))
+  function listOne(id) {
     return store.get(TABLA, id)
+  }
+
+  function create(userData) {
+    const { user, password } = userData
+    completeUser = {
+      id: nanoid.nanoid(),
+      user,
+      password
+    }
+    return store.create(TABLA, completeUser)
   }
 
   return {
     list,
-    listOne
+    listOne,
+    create
   }
 }

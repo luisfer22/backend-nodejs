@@ -36,18 +36,25 @@ function get(tabla, id) {
     list(tabla).then((users) => {
       let user = users.filter((item) => item.id === Number(id)) || null
       if (user) {
-      resolve(user)
+        const userSecure = {id: user[0].id, name: user[0].user}
+        resolve(userSecure)
       }
       reject("user not found")
-      
     })
       
   
   })
 }
 
-function upsert(tabla, data) {
-  db[tabla].push(data)
+function create(tabla, data) {
+  return new Promise((resolve, reject) => {
+    db[tabla].push(data)
+    const dataView = {
+      id: data.id,
+      user: data.user
+    }
+    resolve(dataView)
+  })
 }
 
 function remove(tabla, id) {
@@ -57,6 +64,6 @@ function remove(tabla, id) {
 module.exports = {
   list,
   get,
-  upsert,
+  create,
   remove
 }

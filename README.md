@@ -70,3 +70,45 @@ Para mas información [nanoid changelog](https://github.com/ai/nanoid/blob/main/
 2. Las rutas en apis en options para inicializar swagger-jsdoc, pasaba que la ruta relativa era la raiz del proyecto y tambien el aprender que con ** para carpetas y * para archivos puede `swagger-jsdoc` usar de forma recursiva encontrar las opciones de los **METODOS HTTP** comentando y documentando a la vez, usando [node:glob](https://github.com/Surnet/swagger-jsdoc/blob/v7/docs/CONCEPTS.md).
 3. [TypeScript](https://github.com/Surnet/swagger-jsdoc/blob/v7/docs/TYPESCRIPT.md)
 4. Recuerda poner los midlewares de `express.json` & `express.urlencoded()` antes que el router de rutas o la ruta en si mismo, si lo pones despues es como si no existieras.
+
+## Clase 7 - JWT (Json web tocken) gestion de acceso
+
+JWT, que significa JSON Web Token, es un estándar abierto (RFC 7519) que define una forma compacta y autónoma de transmitir información entre dos partes como un objeto JSON. Este token puede ser verificado y confiado porque está firmado digitalmente. JWT se utiliza comúnmente para autenticación y autorización en aplicaciones web y servicios.
+
+**Características clave de JWT:**
+
+1. **Formato Compacto:** JWT utiliza un formato compacto y seguro para transmitir la información entre las partes.
+
+2. **Estructura Basada en JSON:** La información en un JWT se representa como un objeto JSON, lo que lo hace fácilmente legible y manipulable.
+
+3. **Firmado Digitalmente:** Puede ser firmado digitalmente para verificar la integridad de los datos y la autenticidad del emisor.
+
+4. **Tres Partes:** JWT se compone de tres partes: el encabezado (`header`), la carga útil (`payload`), y la firma (`signature`).
+
+   - **Encabezado (`header`):** Contiene información sobre cómo se realiza la firma.
+   - **Carga Útil (`payload`):** Contiene la información que se va a transmitir.
+   - **Firma (`signature`):** Se utiliza para verificar que el remitente del token es quien dice ser y para asegurar que la carga útil no haya sido modificada en el camino.
+
+5. **Base64URL Encoding:** Las tres partes del JWT se codifican en Base64URL, lo que proporciona una representación compacta y segura.
+
+**Uso común de JWT:**
+
+- **Autenticación:** Después de que un usuario se autentica, un servidor genera un JWT que contiene información sobre ese usuario. Este token se envía al cliente y se incluye en las solicitudes subsiguientes para autenticar al usuario.
+
+- **Autorización:** Además de la autenticación, los JWT también se pueden utilizar para transmitir información sobre los permisos y roles del usuario, lo que permite la autorización en la aplicación.
+
+**Ejemplo de JWT:**
+
+```jwt
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+```
+
+Este JWT se compone de tres partes:
+
+- Encabezado: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9`
+- Carga Útil: `eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ`
+- Firma: `SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c`
+
+## Clase 8 - Autenticacion registro
+
+Creando alternamente una table especifica para las contraseñas, que sera auth

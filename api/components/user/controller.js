@@ -1,4 +1,5 @@
 const nanoid = require("nanoid")
+const auth = require("../auth")
 const TABLA = 'user';
 
 module.exports = function (injectedStore) {
@@ -16,12 +17,19 @@ module.exports = function (injectedStore) {
   }
 
   function create(userData) {
-    const { user, password } = userData
+    const { username, password } = userData
     completeUser = {
       id: nanoid.nanoid(),
-      user,
-      password
+      username
     }
+
+    console.log(userData);
+
+    auth.create({
+      ...completeUser,
+      password
+    })
+
     return store.create(TABLA, completeUser)
   }
 

@@ -9,8 +9,10 @@ const fs = require("fs/promises")
 const path = require("path")
 
 // path resolve combina la direccion actual del archivo, y la relativa que no esta como tal en lugar actual
-const mockPath = path.resolve(__dirname, '../utils/mock/MOCK_DATA.json')
-async function dbMock() {
+const tableUser = path.resolve(__dirname, '../utils/mock/MOCK_DATA_TABLE_USERS.json')
+const tableAuth = path.resolve(__dirname, '../utils/mock/MOCK_DATA_TABLE_AUTH.json')
+
+async function dbMock(mockPath) {
   try {
   const db = await fs.readFile(mockPath, "utf8")
     return JSON.parse(db)
@@ -19,9 +21,16 @@ async function dbMock() {
   }
 }
 
+// Base de datos en memoria
 let db = {}
 
-dbMock().then(data => {
+
+dbMock(tableUser).then(data => {
+  db.user = data
+}).catch(error => console.log(error))
+
+
+dbMock(tableAuth).then(data => {
   db.user = data
 }).catch(error => console.log(error))
 
@@ -48,10 +57,15 @@ function get(tabla, id) {
 
 function create(tabla, data) {
   return new Promise((resolve, reject) => {
+
+    if (!db[tabla]) {
+      db[tabla] = []
+    }
+
     db[tabla].push(data)
     const dataView = {
       id: data.id,
-      user: data.user
+      username: data.username
     }
     resolve(dataView)
   })

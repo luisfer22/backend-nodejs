@@ -122,3 +122,11 @@ No guardar la contraseña en limpio, es bueno delegar las contraseñas a tercero
 1. Primero es que el login se crea en la ruta auth.
 2. Que cuando se crea un usuario realmente se esta es registrando, por lo que seria mejor cambiar el nombre de esta funcion a regitrar.
 3. Que solo puede crear el token si esta registrado ya el usuario en cuestion.
+
+## Clase 10 - Autenticación: cifrar contraseñas
+
+Cifrando contraseñas con `bcrypt` una de las librerias mas usadas para la encriptacion, recordar que cada vez que se llama a la función no importando que la contraseña sea la misma dara un hash diferente, es muy "facil" por que solo usamos dos funciones del modulos los cuales son:
+
+1. Para crear el hash encriptado: `bcrypt.hash(password, length of hashed password)`.
+2. Para comparar la contraseña y el hash guardado `bcrypt.compare(password, encrypted password)`.
+3. La funcion `compare` retorna una promesa

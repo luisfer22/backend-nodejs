@@ -111,4 +111,14 @@ Este JWT se compone de tres partes:
 
 ## Clase 8 - Autenticacion registro
 
-Creando alternamente una table especifica para las contraseñas, que sera auth
+Creando alternamente una table especifica para las contraseñas, que sera auth.
+
+## Clase 9 - Autenticación login
+
+No guardar la contraseña en limpio, es bueno delegar las contraseñas a terceros como google, en este punto necesitaremos `jsonwebtoken` para crear la llave.
+
+### Aportes personales
+
+1. Primero es que el login se crea en la ruta auth.
+2. Que cuando se crea un usuario realmente se esta es registrando, por lo que seria mejor cambiar el nombre de esta funcion a regitrar.
+3. Que solo puede crear el token si esta registrado ya el usuario en cuestion.

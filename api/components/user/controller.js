@@ -54,10 +54,16 @@ module.exports = function (injectedStore) {
     return store.update(TABLA, completeUser, id)
   }
 
+  function remove(id) {
+    auth.remove(id)
+    return store.remove(TABLA, id)
+  }
+
   return {
     list,
     listOne,
     create,
-    update
+    update,
+    remove
   }
 }

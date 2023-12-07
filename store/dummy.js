@@ -122,12 +122,19 @@ function list(tabla) {
   })
 }
 
+// helpers
+function findIndex(tabla, id) {
+  return db[tabla].findIndex((user) => user.id === Number(id))
+}
+
+
+// funciones de alteracion de tablas
 function get(tabla, id) {
   return new Promise((resolve, reject) => {
     list(tabla).then((users) => {
       let user = users.filter((item) => item.id === Number(id)) || null
-      if (user) {
-        const userSecure = {id: user[0].id, name: user[0].username}
+      if (user && user.length !== 0) {
+        const userSecure = { id: user[0].id, name: user[0].username }
         resolve(userSecure)
       }
       reject("user not found")
@@ -155,19 +162,23 @@ function create(tabla, data) {
 
 function update(tabla, data, id) {
   return new Promise((resolve, reject) => {
-    const index = db[tabla].findIndex((user) => user.id === Number(id))
+    const index = findIndex(tabla, id)
     // agregando cambios al id correspondiente
     db[tabla][index] = {
       ...db[tabla][index],
       ...data
     }
-
+    
     resolve("updated done")
   })
 }
 
 function remove(tabla, id) {
-  return true
+  return new Promise((resolve, reject) => {
+    const index = findIndex(tabla, id)
+    delete db[tabla][index]
+    resolve("remove done")
+  })
 }
 
 async function query(tabla, q) {

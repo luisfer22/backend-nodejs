@@ -68,15 +68,20 @@ router.post("/", function (req, res, next) {
 })
 
 router.patch('/:id', secure('update'), function (req, res,next) {
-    console.log(req.body);
 
     Controller.update(req.body, req.params.id)
         .then((user) => {
-            console.log(user);
             response.success(req, res, user, 201)
         })
         .catch(next)
 })
-// router.delete()
+
+router.delete("/:id", function (req, res, next) {
+    Controller.remove(req.params.id)
+        .then((user) => {
+            response.success(req, res, user, 201)
+        })
+        .catch(next)
+})
 
 module.exports = router;

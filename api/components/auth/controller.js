@@ -54,9 +54,14 @@ module.exports = function (injectedStore) {
     return store.update(TABLA, authData, id)
   }
 
+  async function remove(id) {
+    return store.remove(TABLA, id)
+  }
+
   return {
     create,
     update,
+    remove,
     login
   }
 }

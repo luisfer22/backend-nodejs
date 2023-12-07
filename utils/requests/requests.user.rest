@@ -5,7 +5,7 @@ GET http://localhost:3000/ HTTP/1
 GET http://localhost:3000/api/user
 
 ### get one user
-GET http://localhost:3000/api/user/50
+GET http://localhost:3000/api/user/1
 
 ### post user
 POST http://localhost:3000/api/user
@@ -15,3 +15,6 @@ Content-Type: application/json
   "user": "luis",
   "password": "12345678a"
 }
+
+### delete user
+DELETE http://localhost:3000/api/user/1

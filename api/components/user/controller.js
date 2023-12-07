@@ -1,7 +1,6 @@
 const nanoid = require("nanoid")
 const auth = require("../auth")
 const TABLA = 'user';
-const error = require("../../../utils/error")
 
 module.exports = function (injectedStore) {
   let store = injectedStore
@@ -21,7 +20,7 @@ module.exports = function (injectedStore) {
     const { username, password } = userData
 
     if (username === undefined || password === undefined) {
-      throw new error('Informacion requerida', 401)
+      throw new Error('Informacion requerida')
     }
 
     completeUser = {

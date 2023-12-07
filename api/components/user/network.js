@@ -20,12 +20,14 @@ const router = express.Router();
  *      500:
  *        description: Some server error
 */
-router.get('/', function (req, res, next) {
+router.get('/', function (req, res) {
     Controller.list()
         .then((lista) => {
             response.success(req, res, lista, 200)
         })
-        .catch(next)
+        .catch((err) => {
+            response.error(req, res, err.message, 500)
+        })
 })
 
 /**
@@ -50,24 +52,28 @@ router.get('/', function (req, res, next) {
  *         description: Some server error
 */
 
-router.get("/:id", function (req, res, next) {
+router.get("/:id", function (req, res) {
     const { id } = req.params
     Controller.listOne(id)  
         .then((user) => {
             response.success(req, res, user, 200)
         })
-        .catch(next)
+        .catch((err) => {
+            response.error(req, res, err.message, 500)
+        })
         })
         
-router.post("/", function (req, res, next) {
+router.post("/", function (req, res) {
     Controller.create(req.body)
         .then((user) => {
             response.success(req, res, user, 200)
         })
-        .catch(next)
+        .catch((err) => {
+            response.error(req, res, err.message, 500)
+        })
 })
 
-router.patch('/:id', secure('update'), function (req, res,next) {
+router.patch('/:id', secure('update'), function (req, res) {
     console.log(req.body);
 
     Controller.update(req.body, req.params.id)
@@ -75,7 +81,9 @@ router.patch('/:id', secure('update'), function (req, res,next) {
             console.log(user);
             response.success(req, res, user, 201)
         })
-        .catch(next)
+        .catch((err) => {
+            response.error(req, res, err.message, 500)
+        })
 })
 // router.delete()
 

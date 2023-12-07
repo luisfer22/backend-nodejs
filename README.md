@@ -138,11 +138,3 @@ Cifrando contraseñas con `bcrypt` una de las librerias mas usadas para la encri
 
 1. Importante tener en cuenta los middlewares deben tener los `next()` cuando termine una condicion la que sea.
 2. Crear de un json con contraseñas, otro archivo usando bcrypt encryptandolas, y luego cambiando el objeto obtenido y actualizando a la contraseña, utilizando `Promises.all`.
-
-## Clase 13 - Manejo avanzado de errores
-
-En esta clase el Profe Carlos nos enseña como manejar los errores que muestras mucha información y por esto pueden haber vulnerabilidades
-
-1. Creamos un middleware que maneje los errores.
-2. Se implementa un manejo de errores con su mensaje y el  `status code`.
-3. Ahora que tenemos el middleware en uso, podemos quitar los `response.error` del catch y cambiar las funciones a ser un middleware con su respectivo `next` ahora en el catch cambiamos tambien por `next`, con esto el middleware se encargara de la presentacion del error.

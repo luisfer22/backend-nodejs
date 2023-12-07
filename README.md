@@ -129,4 +129,12 @@ Cifrando contraseñas con `bcrypt` una de las librerias mas usadas para la encri
 
 1. Para crear el hash encriptado: `bcrypt.hash(password, length of hashed password)`.
 2. Para comparar la contraseña y el hash guardado `bcrypt.compare(password, encrypted password)`.
-3. La funcion `compare` retorna una promesa
+3. La funcion `compare` retorna una promesa.
+
+
+## Clase 11 & 12 - Autenticacion: Gestion de permisos y comprobar verificacion de tokens
+
+### Lecciones aprendidas
+
+1. Importante tener en cuenta los middlewares deben tener los `next()` cuando termine una condicion la que sea.
+2. Crear de un json con contraseñas, otro archivo usando bcrypt encryptandolas, y luego cambiando el objeto obtenido y actualizando a la contraseña, utilizando `Promises.all`.

@@ -1,5 +1,6 @@
 const express = require('express');
 
+const secure = require('./secure')
 const response = require('../../../network/response');
 const Controller = require('./index');
 
@@ -71,8 +72,19 @@ router.post("/", function (req, res) {
             response.error(req, res, err.message, 500)
         })
 })
-// router.put()
-// router.patch()
+
+router.patch('/:id', secure('update'), function (req, res) {
+    console.log(req.body);
+
+    Controller.update(req.body, req.params.id)
+        .then((user) => {
+            console.log(user);
+            response.success(req, res, user, 201)
+        })
+        .catch((err) => {
+            response.error(req, res, err.message, 500)
+        })
+})
 // router.delete()
 
 module.exports = router;

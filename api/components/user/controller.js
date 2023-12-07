@@ -18,6 +18,11 @@ module.exports = function (injectedStore) {
 
   function create(userData) {
     const { username, password } = userData
+
+    if (username === undefined || password === undefined) {
+      throw new Error('Informacion requerida')
+    }
+
     completeUser = {
       id: nanoid.nanoid(),
       username
@@ -33,9 +38,25 @@ module.exports = function (injectedStore) {
     return store.create(TABLA, completeUser)
   }
 
+  function update(userData, id) {
+    const { username, password } = userData
+
+    completeUser = {
+      username
+    }
+
+    auth.update({
+      ...completeUser,
+      password
+    }, id)
+
+    return store.update(TABLA, completeUser, id)
+  }
+
   return {
     list,
     listOne,
-    create
+    create,
+    update
   }
 }

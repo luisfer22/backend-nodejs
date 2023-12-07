@@ -15,3 +15,21 @@ Content-Type: application/json
   "username": "set",
   "password": "1222lml"
 }
+
+### login usuario id 50
+POST http://localhost:3000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "hkillingworth1d",
+  "password": "qI1\\+N42I!f.7"
+}
+
+### update user
+PATCH http://localhost:3000/api/user/50
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTAsInVzZXJuYW1lIjoiaGtpbGxpbmd3b3J0aDFkIiwicGFzc3dvcmQiOiIkMmIkMDUkSlVrdmw2Rm44Slp5N1I2bXY0aW5VZUw4dkkuZTVLT1daQ3VDU002V1FuVi5uU2VOa2FnUUciLCJpYXQiOjE3MDE4OTUzMzV9.HBZkIibd4ARK8KZ4_S48wVI8EQn96iJbAHRpZC90EEI
+
+{
+  "username": "seta"
+}

@@ -131,7 +131,6 @@ Cifrando contraseñas con `bcrypt` una de las librerias mas usadas para la encri
 2. Para comparar la contraseña y el hash guardado `bcrypt.compare(password, encrypted password)`.
 3. La funcion `compare` retorna una promesa.
 
-
 ## Clase 11 & 12 - Autenticacion: Gestion de permisos y comprobar verificacion de tokens
 
 ### Lecciones aprendidas
@@ -146,3 +145,5 @@ En esta clase el Profe Carlos nos enseña como manejar los errores que muestras 
 1. Creamos un middleware que maneje los errores.
 2. Se implementa un manejo de errores con su mensaje y el  `status code`.
 3. Ahora que tenemos el middleware en uso, podemos quitar los `response.error` del catch y cambiar las funciones a ser un middleware con su respectivo `next` ahora en el catch cambiamos tambien por `next`, con esto el middleware se encargara de la presentacion del error.
+
+## Clase 14 - Base de datos

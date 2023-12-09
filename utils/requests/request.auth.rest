@@ -21,15 +21,15 @@ POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
-  "username": "hkillingworth1d",
-  "password": "qI1\\+N42I!f.7"
+  "username": "set",
+  "password": "1222lml"
 }
 
 ### update user
-PATCH http://localhost:3000/api/user/50
+PATCH http://localhost:3000/api/user/pOP8LByQ1ALunlXOpdLZt
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NTAsInVzZXJuYW1lIjoiaGtpbGxpbmd3b3J0aDFkIiwicGFzc3dvcmQiOiIkMmIkMDUkSlVrdmw2Rm44Slp5N1I2bXY0aW5VZUw4dkkuZTVLT1daQ3VDU002V1FuVi5uU2VOa2FnUUciLCJpYXQiOjE3MDE4OTUzMzV9.HBZkIibd4ARK8KZ4_S48wVI8EQn96iJbAHRpZC90EEI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBPUDhMQnlRMUFMdW5sWE9wZExadCIsInVzZXJuYW1lIjoic2V0IiwicGFzc3dvcmQiOiIkMmIkMDUkaEIxL0VTVHB4ekFvVUUudUkzZy5tT2JtWEFoTFdkN3o1QzVkNUEyRGsxQ3YvUldQR3dMLjYiLCJpYXQiOjE3MDIwODg4OTh9.mhZW0QUlUljCNjatfKd-9lrM3hWh6H8xAMCNFGV2Mn8
 
 {
-  "username": "seta"
+  "username": "set of sem"
 }

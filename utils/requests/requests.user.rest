@@ -5,16 +5,16 @@ GET http://localhost:3000/ HTTP/1
 GET http://localhost:3000/api/user
 
 ### get one user
-GET http://localhost:3000/api/user/1
+GET http://localhost:3000/api/user/asasas
 
 ### post user
 POST http://localhost:3000/api/user
 Content-Type: application/json
 
 {
-  "user": "luis",
+  "username": "sarai",
   "password": "12345678a"
 }
 
 ### delete user
-DELETE http://localhost:3000/api/user/1
+DELETE http://localhost:3000/api/user/NJ_o8d3nbJ3wl9GhCxfLH

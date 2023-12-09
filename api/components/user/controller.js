@@ -29,8 +29,6 @@ module.exports = function (injectedStore) {
       username
     }
 
-    console.log(userData);
-
     auth.create({
       ...completeUser,
       password

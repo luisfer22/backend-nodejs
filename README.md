@@ -146,4 +146,14 @@ En esta clase el Profe Carlos nos enseña como manejar los errores que muestras 
 2. Se implementa un manejo de errores con su mensaje y el  `status code`.
 3. Ahora que tenemos el middleware en uso, podemos quitar los `response.error` del catch y cambiar las funciones a ser un middleware con su respectivo `next` ahora en el catch cambiamos tambien por `next`, con esto el middleware se encargara de la presentacion del error.
 
-## Clase 14 - Base de datos
+## Clase 14 -  Base de datos
+
+En la rama clase-14 veremos las clases de toda la implementación de la base de datos lo cual sera:
+
+1. Clase 14: Conexion base de datos
+2. Clase 15: Escribiendo metodos faltantes para que se puedan volver a usar los controladores.
+3. Clase 16: Relacionando entidades con follow
+
+### Apuntes
+
+1. Mas información sobre libreria [mysql2](https://www.npmjs.com/package/mysql2).

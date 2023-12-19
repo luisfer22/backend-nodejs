@@ -17,8 +17,11 @@ const check = {
     own: function (req, owner) {
         const decoded = decodeHeader(req)
         if (decoded.id !== owner) {
-            throw new error('No puedes hacer esto', 403)
+        throw new error('No puedes hacer esto', 403)
         }
+    },
+    logged: function (req, owner) {
+        const decoded = decodeHeader(req)
     }
 }
 

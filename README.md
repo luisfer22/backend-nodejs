@@ -152,7 +152,7 @@ En la rama clase-14 veremos las clases de toda la implementación de la base de 
 
 1. Clase 14: Conexion base de datos
 2. Clase 15: Escribiendo metodos faltantes para que se puedan volver a usar los controladores.
-3. Clase 16: Relacionando entidades con follow
+3. Clase 16: Relacionando entidades : follow(seguidores)
 
 ### Apuntes
 

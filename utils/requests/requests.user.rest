@@ -12,8 +12,8 @@ POST http://localhost:3000/api/user
 Content-Type: application/json
 
 {
-  "username": "sarai",
-  "password": "12345678a"
+  "username": "mari97",
+  "password": "liania"
 }
 
 ### delete user

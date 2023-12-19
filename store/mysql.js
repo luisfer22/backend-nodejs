@@ -93,12 +93,43 @@ function remove(table, id) {
     })
 }
 
-function query(table, query) {
+function queryV1(table, query) {
     return new Promise((resolve, reject) => {
         connection.query(`SELECT * FROM ${table} WHERE ?`, query, (err, res) => {
             if (err) return reject(err)
             resolve(res[0] || null)
             })
+    })
+}
+
+function query(table, query, join) {
+    let joinQuery = ''
+        if (join) {
+            const key = Object.keys(join)[0]
+            const val = join[key]
+            // console.log(
+            //     'join: ' +
+            //     join.user +
+            //     ' table: ' +
+            //     table +
+            //     '\nkey:' +
+            //     key +
+            //     '\t' +
+            //     'val:' +
+            //     val
+            // )
+            joinQuery = `JOIN ${key} ON ${table}.${val} = ${key}.id`
+        }
+
+    return new Promise((resolve, reject) => {
+        connection.query(
+        `SELECT * FROM ${table} ${joinQuery} WHERE ${table}.?`,
+        query,
+        (err, res) => {
+            if (err) return reject(err)
+            resolve(res || null)
+        }
+        )
     })
 }
 

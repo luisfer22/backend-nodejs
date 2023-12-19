@@ -1,0 +1,6 @@
+### siguiendo a otro usuario siguiendo poniendo el id del usuario a seguir en params
+POST http://localhost:3000/api/user/follow/dOEWzhg-Krsldp5Zejg-F
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBPUDhMQnlRMUFMdW5sWE9wZExadCIsInVzZXJuYW1lIjoic2V0IG9mIHNlbSIsInBhc3N3b3JkIjoiJDJiJDA1JGhCMS9FU1RweHpBb1VFLnVJM2cubU9ibVhBaExXZDd6NUM1ZDVBMkRrMUN2L1JXUEd3TC42IiwiaWF0IjoxNzAzMDE1Nzk3fQ.TsoDRnDLacSMBG5KLekXDO0S-_isFvq_caT2gTOOWIo
+
+### obteniendo followings de un usuario pOP8LByQ1ALunlXOpdLZt
+GET http://localhost:3000/api/user/pOP8LByQ1ALunlXOpdLZt/following

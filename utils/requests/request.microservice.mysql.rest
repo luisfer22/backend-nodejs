@@ -1,0 +1,33 @@
+### obtiendo usuarios
+GET http://localhost:3001/user/
+
+### obtiendo post especifico mediante id
+GET http://localhost:3001/post/-kzmFPtJBgzTxaqqOGgfb
+
+### creando post
+POST http://localhost:3001/post
+Content-Type: application/json
+
+{
+  "id": "maooa22",
+  "user_id": "asas",
+  "title": "Existencia",
+  "content": "hacerce a si mismo"
+}
+
+### actualizando un post
+PATCH http://localhost:3001/post
+Content-Type: application/json
+
+{
+  "id": "maooa22",
+  "content": "hacerce a si mismo, cierto pero nada de pesimismo"
+}
+
+### eliminando un post
+DELETE http://localhost:3001/post
+Content-Type: application/json
+
+{
+  "id": "maooa22"
+}

@@ -10,5 +10,9 @@ module.exports = {
     user: process.env.MYSQL_USER || 'root',
     password: process.env.MYSQL_PASS || 'toor,+13::Q',
     database: process.env.MYSQL_DB || 'test_node'
+  },
+  // microservice port
+  mysqlService: {
+    port: process.env.MYSQL_SRV_PORT || 3001
   }
 }

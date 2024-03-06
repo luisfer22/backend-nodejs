@@ -12,15 +12,13 @@ module.exports = function (injectedStore) {
 
   async function login(username, password) {
     const data = await store.query(TABLA, { username: username })
-    console.log(data);
 
-    return bcrypt.compare(password, data.password).then((sonIguales) => {
-        console.log(sonIguales);
+    return bcrypt.compare(password, data[0].password).then((sonIguales) => {
         if (sonIguales === true) {
-        // Generar token;
-        return auth.sign(data)
+          // Generar token;
+          return auth.sign(data[0])
         } else {
-        throw new error('Contraseña incorrecta',401)
+          throw new error('Contraseña incorrecta',401)
         }
     })
   }

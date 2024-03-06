@@ -9,4 +9,5 @@ function errors(err, req, res, next) {
     response.error(req, res, message, status);
 }
 
+
 module.exports = errors;

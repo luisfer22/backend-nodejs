@@ -1,5 +1,5 @@
 ### url root
-GET http://localhost:3000/ HTTP/1
+GET http://localhost:3000/
 
 ### get all users
 GET http://localhost:3000/api/user
@@ -12,8 +12,8 @@ POST http://localhost:3000/api/user
 Content-Type: application/json
 
 {
-  "username": "mari97",
-  "password": "liania"
+  "username": "carlosPaz224",
+  "password": "12345a"
 }
 
 ### delete user

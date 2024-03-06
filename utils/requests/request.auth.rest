@@ -7,21 +7,12 @@ Content-Type: application/json
   "password": "1222lml"
 }
 
-### obteniendo token
+### iniciando sesión: obteniendo token
 POST http://localhost:3000/api/auth/login
 Content-Type: application/json
 
 {
   "username": "set of sem",
-  "password": "1222lml"
-}
-
-### login usuario id 50
-POST http://localhost:3000/api/auth/login
-Content-Type: application/json
-
-{
-  "username": "set",
   "password": "1222lml"
 }
 

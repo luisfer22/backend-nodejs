@@ -35,6 +35,7 @@ function handleCon() {
 
 handleCon();
 
+// List all post regardless of users
 function list(table) {
     return new Promise( (resolve, reject) => {
         connection.query(`SELECT * FROM ${table}`, (err, data) => {
@@ -42,6 +43,18 @@ function list(table) {
             resolve(data);
         })
     })
+}
+
+function listByUser(table, id ) {
+    return new Promise((resolve, reject) => {
+        connection.query(`SELECT * FROM ${table} WHERE ? `,
+            id,
+            (err, data) => {
+                if (err) return reject(err)
+                resolve(data)
+            }
+        )
+    } )
 }
 
 function get(table, id) {
@@ -66,21 +79,22 @@ function create(table, data) {
 function update(table, data, id) {
     return new Promise((resolve, reject) => {
         connection.query(
-        `UPDATE ${table} SET ? WHERE id=?`,
-        [data, id],
-        (err, result) => {
-        if (err) return reject(err)
-        resolve(result)
+            `UPDATE ${table} SET ? WHERE id=?`,
+            [data, id],
+            (err, result) => {
+            if (err) return reject(err)
+            resolve(result)
             }
         )
     })
 }
 
 function upsert(table, data) {
+    console.log(`table: ${table}, data: ${data}`);
     if (data && data.id) {
         return update(table, data)
     } else {
-        return insert(table, data)
+        return create(table, data)
     }
 }
 
@@ -104,9 +118,12 @@ function queryV1(table, query) {
 
 function query(table, query, join) {
     let joinQuery = ''
-        if (join) {
+    if (join) {
+        // key = table
+        // val = value to search
             const key = Object.keys(join)[0]
             const val = join[key]
+            console.log(`key: ${key}, val: ${val}`);
             // console.log(
             //     'join: ' +
             //     join.user +
@@ -136,9 +153,11 @@ function query(table, query, join) {
 
 module.exports = {
     list,
+    listByUser,
     get,
     create,
     update,
+    upsert,
     remove,
     query
 }

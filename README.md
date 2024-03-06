@@ -157,3 +157,11 @@ En la rama clase-14 veremos las clases de toda la implementación de la base de 
 ### Apuntes
 
 1. Mas información sobre libreria [mysql2](https://www.npmjs.com/package/mysql2).
+
+## Clase 17 - Post y Likes
+
+Creacion de servicios de post y likes y organizando un poco el codigo para mejor legibilidad.
+
+### JsonWebToken
+
+- [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)

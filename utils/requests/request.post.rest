@@ -1,0 +1,44 @@
+### obteniendo todos los post
+GET http://localhost:3000/api/post
+
+### obteniendo todos los post de un usuario especifico
+GET http://localhost:3000/api/post/user/pOP8LByQ1ALunlXOpdLZt
+
+### obteniendo un solo post
+GET http://localhost:3000/api/post/oamsoms
+
+### creando post
+POST http://localhost:3000/api/post/user/pOP8LByQ1ALunlXOpdLZt
+Content-Type: application/json
+
+{
+  "title": "Destiny",
+  "content": "Shiro Sagisu"
+}
+
+
+### creando un post
+POST http://localhost:3000/api/post/user/pOP8LByQ1ALunlXOpdLZt
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBPUDhMQnlRMUFMdW5sWE9wZExadCIsInVzZXJuYW1lIjoic2V0IG9mIHNlbSIsInBhc3N3b3JkIjoiJDJiJDA1JGhCMS9FU1RweHpBb1VFLnVJM2cubU9ibVhBaExXZDd6NUM1ZDVBMkRrMUN2L1JXUEd3TC42IiwiaWF0IjoxNzA5NDg5ODMyLCJleHAiOjE3MDk0OTAxMzJ9.FXbf_wGtGFgrpPNCIIOAuwtPPCYXNWBI-uOJp2PbeuA
+Content-Type: application/json
+
+{
+  "title": "Bacon",
+  "content": "Lais"
+}
+
+
+### actualizando un post
+PATCH http://localhost:3000/api/post/AxWa63yWeLn-jiN0iG1Mg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBPUDhMQnlRMUFMdW5sWE9wZExadCIsInVzZXJuYW1lIjoic2V0IG9mIHNlbSIsInBhc3N3b3JkIjoiJDJiJDA1JGhCMS9FU1RweHpBb1VFLnVJM2cubU9ibVhBaExXZDd6NUM1ZDVBMkRrMUN2L1JXUEd3TC42IiwiaWF0IjoxNzA4ODc1MjYwLCJleHAiOjE3MDg4NzU1NjB9.gS4w77xE9VaEfBTBdpMCjSYwM5q8YQ6l_WxYlVPXaSw
+Content-Type: application/json
+
+{
+  "title": "It's over, west has fallen",
+  "content": "I don´t care if end everything"
+}
+
+### eliminando un post
+DELETE http://localhost:3000/api/post/xPfvLe3BIHv-W7hQBHcR9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6InBPUDhMQnlRMUFMdW5sWE9wZExadCIsInVzZXJuYW1lIjoic2V0IG9mIHNlbSIsInBhc3N3b3JkIjoiJDJiJDA1JGhCMS9FU1RweHpBb1VFLnVJM2cubU9ibVhBaExXZDd6NUM1ZDVBMkRrMUN2L1JXUEd3TC42IiwiaWF0IjoxNzAzMTc5Njk1fQ.x6bW4zK6RHglpmG9NG3MCy1l3VAk0UgJxWn3VyfBOKQ
+Content-Type: application/json

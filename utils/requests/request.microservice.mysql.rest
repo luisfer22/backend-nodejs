@@ -9,10 +9,10 @@ POST http://localhost:3001/post
 Content-Type: application/json
 
 {
-  "id": "maooa22",
-  "user_id": "asas",
-  "title": "Existencia",
-  "content": "hacerce a si mismo"
+  "id": "post1",
+  "user_id": "Y6wUte_ccpvQBr0JljPGY",
+  "title": "Oriente Medio",
+  "content": "De mp fiar"
 }
 
 ### actualizando un post

@@ -67,8 +67,8 @@ router.post("/", function (req, res, next) {
         .catch(next)
 })
 
-router.patch('/:id', secure('update'), function (req, res,next) {
-
+// router.patch('/:id', secure('update'), function (req, res,next) {
+router.patch('/:id', function (req, res, next) {
     Controller.update(req.body, req.params.id)
         .then((user) => {
             response.success(req, res, user, 201)

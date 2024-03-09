@@ -25,7 +25,7 @@ module.exports = function (injectedStore) {
     }
 
     completeUser = {
-      id: nanoid.nanoid(),
+      id: nanoid.nanoid(), 
       username
     }
 
@@ -49,7 +49,7 @@ module.exports = function (injectedStore) {
       password
     }, id)
 
-    return store.update(TABLA, completeUser, id)
+    return store.update(TABLA, id, completeUser)
   }
 
   function remove(id) {

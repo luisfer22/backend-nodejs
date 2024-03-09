@@ -165,3 +165,7 @@ Creacion de servicios de post y likes y organizando un poco el codigo para mejor
 ### JsonWebToken
 
 - [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
+
+## Clase 19 & 20 implementación microservicios
+
+[request alternatives](https://github.com/request/request/issues/3143).

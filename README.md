@@ -169,3 +169,5 @@ Creacion de servicios de post y likes y organizando un poco el codigo para mejor
 ## Clase 19 & 20 implementación microservicios
 
 [request alternatives](https://github.com/request/request/issues/3143).
+
+En el proyecto anterior, se usa la libreria request pero en este caso, decidi usar las mas usada la cual es node-fetch v2, ya que la version 3 ha deprecado el require y ahora hace uso de modules.

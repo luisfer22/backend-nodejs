@@ -166,8 +166,34 @@ Creacion de servicios de post y likes y organizando un poco el codigo para mejor
 
 - [JsonWebToken](https://www.npmjs.com/package/jsonwebtoken)
 
-## Clase 19 & 20 implementación microservicios
+## Clase 19 & 21 implementación microservicios
 
 [request alternatives](https://github.com/request/request/issues/3143).
 
 En el proyecto anterior, se usa la libreria request pero en este caso, decidi usar las mas usada la cual es node-fetch v2, ya que la version 3 ha deprecado el require y ahora hace uso de modules.
+
+## Clase 22 Uso de PM2
+
+## Clase 23 Variables de entorno
+
+En este caso usaremos en vez de dotenv, la implementacion oficial de node que se puede usar apartir de la version **20.6.0** para el manejo de las variables de entornos atravez de el archiv .env
+
+````bash
+# crea el archivo de configuración basico
+pm2 init simple
+
+# Start all applications
+pm2 start ecosystem.config.js
+
+# other
+pm2 list
+pm2 monit
+pm2 show
+pm2 logs --lines 200
+
+# ui in browser
+pm2 plus
+
+````
+
+[more](https://pm2.keymetrics.io/docs/usage/application-declaration/)

@@ -6,7 +6,8 @@
   "main": "config.js",
   "scripts": {
     "start": "node ./api/index.js",
-    "start:dev": "node --watch ./api/index.js"
+    "start:dev": "pm2 start ecosystem.config.js --env development",
+    "stop" : "pm2 stop ecosystem.config.js"
   },
   "keywords": [
     "node",

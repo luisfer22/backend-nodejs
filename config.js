@@ -1,15 +1,18 @@
+require('dotenv').config()
+
+
 module.exports = {
   api: {
     port: process.env.API_PORT || 3000
   },
   jwt: {
-    secret: process.env.JWT_SECRET || 'notasecretv2!'
+    secret: process.env.JWT_SECRET
   },
   mysql: {
-    host: process.env.MYSQL_HOST || 'localhost',
-    user: process.env.MYSQL_USER || 'root',
-    password: process.env.MYSQL_PASS || 'toor,+13::Q',
-    database: process.env.MYSQL_DB || 'test_node'
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_PASS,
+    database: process.env.MYSQL_DB
   },
   // microservice port
   mysqlService: {

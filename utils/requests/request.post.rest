@@ -5,7 +5,7 @@ GET http://localhost:3000/api/post
 GET http://localhost:3000/api/post/user/pOP8LByQ1ALunlXOpdLZt
 
 ### obteniendo un solo post
-GET http://localhost:3000/api/post/oamsoms
+GET http://localhost:3000/api/post/-7QGXEqpE0mrdcql3oJHp
 
 ### creando post
 POST http://localhost:3000/api/post/user/pOP8LByQ1ALunlXOpdLZt

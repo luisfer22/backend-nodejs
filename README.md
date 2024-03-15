@@ -174,8 +174,6 @@ En el proyecto anterior, se usa la libreria request pero en este caso, decidi us
 
 ## Clase 22 Uso de PM2
 
-## Clase 23 Variables de entorno
-
 En este caso usaremos en vez de dotenv, la implementacion oficial de node que se puede usar apartir de la version **20.6.0** para el manejo de las variables de entornos atravez de el archiv .env
 
 ````bash
@@ -197,3 +195,11 @@ pm2 plus
 ````
 
 [more](https://pm2.keymetrics.io/docs/usage/application-declaration/)
+
+## Clase 23 Variables de entorno
+
+## Clase 24 Cashe como microservicio, redis
+
+## Clase 25 Conectando Redis
+
+## Clase 26 Conectando nuestra api al cache
